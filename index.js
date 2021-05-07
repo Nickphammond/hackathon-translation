@@ -58,7 +58,13 @@ fetch(dogPic)
     .catch((error) => {console.log("error: " + error)}) 
 
 
+async function getDogPic() {
+    let data = null
+    let response = await fetch(`${dogPic}`)
+    data = await response.json()
+    doggie.src = data.message
 
+}
 
 
 
